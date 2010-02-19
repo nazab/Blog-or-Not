@@ -1,0 +1,23 @@
+# config/doctrine/schema.yml
+Blog:
+  actAs: { Timestampable: ~ }
+  columns:
+    url:            { type: string(1000), notnull: true }
+    email:          { type: string(1000), notnull: true }
+    is_thumbnail:   { type: boolean, notnull: true, default: 0 }
+    thumbnail_url:  { type: string(1000) }
+    admin_hash:     { type: string(1000) }
+    public_hash:    { type: string(1000) }
+    vote_sum:       { type: integer, notnull: true, default:0 }
+    vote_count:       { type: integer, notnull: true, default:0 }
+  relations:
+    Vote: { onDelete: CASCADE, local: id, foreign: blog_id }
+    Blog: { local: id, foreign: id }
+
+Vote:
+  actAs: { Timestampable: ~ }
+  columns:
+   blog_id: { type: integer, notnull: true }
+   value:   { type: integer, notnull: true }
+  relations:
+    Blog: { onDelete: CASCADE, local: blog_id, foreign: id }

@@ -1,0 +1,25 @@
+# default rules
+homepage:
+  url:   /
+  param: { module: blog, action: index }
+
+new_blog:
+  url:   /new
+  param: { module: blog, action: new }
+
+thankyou_blog:
+  url:   /thankyou
+  param: { module: blog, action: thankyou }
+
+blog_vote:
+  url:   /vote
+  param: { module: blog, action: vote }
+
+blog_admin:
+  url:   /admin/:admin_hash
+  param: { module: blog, action: admin }
+
+blog_widget:
+  url:   /widget/:public_hash
+  param: { module: blog, action: widget }
+  

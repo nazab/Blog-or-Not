@@ -1,0 +1,13 @@
+# valeur par default
+all:
+  mail:
+    contact:   contact@hotornot.com
+    webmaster: webmaster@hotornot.com
+  image:
+    path: C:\WWW\hotornot\web\images\
+    url:  http://localhost/Hot or Not/web/images/
+# valeur pour le kimsufi
+prod:
+  image:
+    path: /home/nazab/www/blogornot/apps/web/images/
+    url:  http://blogornot.net/images/
